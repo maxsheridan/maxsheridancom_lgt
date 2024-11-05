@@ -16,8 +16,8 @@ div.essential_audio {
 
 /* 2. The Player Button – General */
 div.essential_audio > div:nth-child(1) div {
-	width: 28px;
-	height: 28px;
+	width: 26px;
+	height: 26px;
 	margin-top: -13px;
 	border-radius: 50%;
 	background-color: var(--accent-color);
