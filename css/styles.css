@@ -53,7 +53,6 @@ body {
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 header, footer {
@@ -179,7 +178,13 @@ a:not(header a):not(footer a):not(li a), .link a, button[type="submit"] {
     padding-bottom: .15rem;
 }
 
-a:hover {
+@media (hover: hover) {
+    a:hover {
+        text-shadow: 0 0 10px var(--highlight-color), 0 0 15px var(--highlight-color), 0 0 20px var(--highlight-color);
+    }
+}
+
+a:active {
     text-shadow: 0 0 10px var(--highlight-color), 0 0 15px var(--highlight-color), 0 0 20px var(--highlight-color);
 }
 
