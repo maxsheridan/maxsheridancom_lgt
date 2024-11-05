@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     let submitted = false;
 
-    // Function to handle form submission
+    // Handle form submission
     function handleFormSubmission(contactForm) {
         contactForm.addEventListener("submit", function(e) {
             if (!submitted) {
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
         };
     }
 
-    // Initial check for the contact form and handle its submission
+    // Initial check for contact form and submission handling
     const contentContainer = document.getElementById("dynamic-content");
     const contactForm = document.getElementById("contactForm");
     if (contactForm) handleFormSubmission(contactForm);
@@ -39,22 +39,22 @@ document.addEventListener("DOMContentLoaded", function() {
                 const content = await response.text();
                 contentContainer.innerHTML = content;
 
-                // Update the page title if title information is in the loaded content
+                // Update page title
                 const titleMatch = content.match(/<title>(.*?)<\/title>/);
                 if (titleMatch) {
-                    document.title = `${titleMatch[1]} - WSF`; // Add site title as suffix
+                    document.title = titleMatch[1]; // Directly set the title without adding a suffix
                 }
 
-                // Reattach the form submission handler if a new form is loaded
+                // Reattach form submission handler
                 const newContactForm = document.getElementById("contactForm");
                 if (newContactForm) handleFormSubmission(newContactForm);
 
-                // Remove any previous audio player instance before reinitializing
+                // Remove previous audio player instance before reinitializing
                 if (typeof Essential_Audio !== "undefined" && typeof Essential_Audio.destroy === "function") {
                     Essential_Audio.destroy();
                 }
 
-                // Directly initialize the audio player after new content is loaded
+                // Initialize audio player after new content is loaded
                 if (typeof Essential_Audio !== "undefined" && typeof Essential_Audio.init === "function") {
                     Essential_Audio.init();
                 }
