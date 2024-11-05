@@ -81,7 +81,8 @@ header {
 
 .page {
     width: 100%;
-    max-height: calc(100vh - 8rem); 
+    max-height: calc(100vh - 8rem);
+	max-height: calc(100dvh - 8rem); 
     overflow-y: auto;
     overscroll-behavior: none;
     color: var(--primary-color);
