@@ -5,27 +5,27 @@ document.addEventListener("DOMContentLoaded", function() {
     function handleFormSubmission(contactForm) {
         contactForm.addEventListener("submit", function(e) {
             if (!submitted) {
-                e.preventDefault(); // Prevent normal submission
-                contactForm.querySelectorAll("*").forEach(element => element.style.display = "none"); // Hide all form elements
+                e.preventDefault();
+                contactForm.querySelectorAll("*").forEach(element => element.style.display = "none");
 
                 const thanksMessage = document.createElement("p");
                 thanksMessage.textContent = "Thanks. We’ll be in touch.";
-                contactForm.insertBefore(thanksMessage, contactForm.firstChild); // Prepend the message
+                contactForm.insertBefore(thanksMessage, contactForm.firstChild);
 
                 submitted = true;
-                setTimeout(() => contactForm.submit(), 1000); // Submit the form after a delay
+                setTimeout(() => contactForm.submit(), 1000);
             }
         });
 
         document.getElementById("hidden_iframe").onload = () => {
-            submitted = false; // Reset the variable if needed
+            submitted = false;
         };
     }
 
     // Initial check for the contact form and handle its submission
     const contentContainer = document.getElementById("dynamic-content");
     const contactForm = document.getElementById("contactForm");
-    if (contactForm) handleFormSubmission(contactForm); // Attach handler to existing form
+    if (contactForm) handleFormSubmission(contactForm);
 
     // Dynamic content loading
     document.addEventListener("click", async (event) => {
@@ -38,6 +38,12 @@ document.addEventListener("DOMContentLoaded", function() {
             if (response.ok) {
                 const content = await response.text();
                 contentContainer.innerHTML = content;
+
+                // Update the page title if title information is in the loaded content
+                const titleMatch = content.match(/<title>(.*?)<\/title>/);
+                if (titleMatch) {
+                    document.title = `${titleMatch[1]} - WSF`; // Add site title as suffix
+                }
 
                 // Reattach the form submission handler if a new form is loaded
                 const newContactForm = document.getElementById("contactForm");
