@@ -18,7 +18,7 @@ div.essential_audio {
 div.essential_audio > div:nth-child(1) div {
 	width: 26px;
 	height: 26px;
-	margin-top: -13px;
+	margin-top: -12px;
 	border-radius: 50%;
 	background-color: var(--accent-color);
 }
