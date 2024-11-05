@@ -1,0 +1,134 @@
+:root {
+    --primary-color: #111;
+    --accent-color: #19199D;
+    --background-color: whitesmoke;
+}
+
+html {
+    background-color: var(--background-color);
+    overscroll-behavior: none;
+}
+
+body {
+    z-index: 0;
+    min-height: 100vh;
+    padding: unset;
+    background: none;
+    -ms-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.page {
+    display: flex;
+    min-height: 100vh;
+    min-height: 100dvh;
+    max-height: unset;
+    overflow-y: unset;
+    background-color: var(--accent-color);
+}
+
+.cover {
+    flex: 1;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    height: 100vh;
+    animation: fadeIn 1.5s ease forwards;
+    -webkit-animation: fadeIn 1.5s ease forwards; 
+}
+
+.content {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    border-left: 7px solid var(--primary-color);
+    background-color: var(--background-color);
+}
+
+.text {
+    padding: 4rem 1.5rem;
+    color: var(--primary-color);
+}
+
+.text-inner {
+    max-width: 38rem;
+}
+
+/* All longform content, including TDC*/
+
+.intro {
+    margin: 2rem 0;
+}
+
+.intro hr {
+    margin: 0;
+}
+
+p.intro-text {
+    font-size: clamp(1rem,3vw,1.075rem);
+    line-height: 1.45;
+    margin: 1rem 0;
+}
+
+.dropcap {
+    float: left;
+    padding: .65rem .5rem 1.3rem 0rem;
+    font-family: var(--heading-font);
+    font-size: 7rem;
+    font-weight: 600;
+    line-height: 4.5rem;
+    color: var(--primary-color)
+}
+
+blockquote {
+    margin: 3rem auto;
+    padding: 0 .5rem 0 .5rem;
+}
+
+/* TDC only */
+
+.heading {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.heading .graphic {
+    margin-bottom: 1rem;
+}
+
+.heading h2 {
+    margin-bottom: 1.5rem;
+}
+
+/*Mobile*/
+
+@media (max-width: 768px) {
+    .page {
+        display: block;
+    }
+
+    .cover {
+        position: relative;
+        height: 50vh;
+        border:unset;
+    }
+
+    .content {
+        border-top: 7px solid var(--primary-color);
+        border-left: unset;
+    }
+
+    .text {
+        padding: 0rem 1rem;
+    }
+
+    .text-inner {
+        max-width: unset;
+        padding: 3rem 0;
+    }
+}

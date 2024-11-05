@@ -1,0 +1,37 @@
+:root {
+    --primary-color: whitesmoke;
+    --secondary-color: pink;
+    --accent-color: #1C1C9C;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overscroll-behavior: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding-right: clamp(1rem, 3vw, 1.5rem);
+    padding-left: clamp(1rem, 3vw, 1.5rem);
+    background: var(--accent-color) url('/assets/covers/lucious_bride.webp') no-repeat 52% center/cover;
+    background-attachment: fixed;
+    -ms-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+main {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
