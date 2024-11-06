@@ -41,18 +41,18 @@ html a:hover, button:hover, div.essential_audio > div:nth-child(1) div.off, div.
 }
 
 body {
-	z-index: 0;
-	min-height: 100vh;
-	min-height: 100dvh;
-	padding-top: 4rem;
-	padding-bottom: 4rem;  
-	padding-left: clamp(1rem, 3vw, 1.5rem);
-	background: #0E000E url('/assets/covers/background.webp') no-repeat 15% center/cover;
-	background-attachment: fixed;
-	-ms-text-size-adjust: none;
-	-moz-text-size-adjust: none;
-	-webkit-text-size-adjust: none;
-	text-size-adjust: none;
+z-index: 0;
+min-height: 100vh;
+min-height: 100dvh;
+padding-top: 4rem;
+padding-bottom: 4rem;  
+padding-left: clamp(1rem, 3vw, 1.5rem);
+background: #0E000E url('/assets/covers/background.webp') no-repeat 15% center/cover;
+background-attachment: fixed;
+-ms-text-size-adjust: none;
+-moz-text-size-adjust: none;
+-webkit-text-size-adjust: none;
+text-size-adjust: none;
 }
 
 header, footer {
@@ -80,12 +80,12 @@ header {
 }
 
 .page {
-	width: 100%;
-	max-height: calc(100vh - 8rem);
-	max-height: calc(100dvh - 8rem);
-	overflow-y: auto;
-	overscroll-behavior: none;
-	color: var(--primary-color);
+width: 100%;
+max-height: calc(100vh - 8rem);
+max-height: calc(100dvh - 8rem);
+overflow-y: auto;
+overscroll-behavior: none;
+color: var(--primary-color);
 }
 
 .page-inner { 
