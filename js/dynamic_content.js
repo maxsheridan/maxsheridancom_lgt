@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
             const page = link.getAttribute("data-page");
 
-            const response = await fetch(${page}.html);
+            const response = await fetch(`${page}.html`);
             if (response.ok) {
                 const content = await response.text();
                 contentContainer.innerHTML = content;
@@ -55,4 +55,4 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     });
-}); 
+});
